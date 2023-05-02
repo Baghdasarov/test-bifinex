@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.root {
+  display: flex;
+  justify-content: center;
+}
+
+.widget-container {
+  background-color: #172d3e;
+}
+
+.header {
+  width: 100%;
+  padding-inline: 5px;
+  height: 28px;
+  border-bottom: 0.75px solid #a2abb2;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-name {
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+}
+
+.currency {
+  color: #a2abb2;
+}
+
+.tables-container {
+  display: inline-flex;
+  justify-content: center;
+  padding-inline: 10px;
+  margin: 0 auto;
+  min-height: calc(25 * 14px);
+}
+
+.settings {
+  display: flex;
+  gap: 8px;
+  margin-right: 10px;
+}
+
+.setting-button {
+  cursor: pointer;
+}
+
+.table {
+  color: #fff;
+}
+
+.bids .row {
+  padding-left: 32px;
+}
+
+.asks .row {
+  padding-right: 32px;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  padding-inline: 5px;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: right;
+  transition: background-color 0.3s ease-out;
+  z-index: 3;
+  background-color: transparent;
+}
+
+.bids .row.blink {
+  background-color: #1a444b;
+}
+
+.asks .row.blink {
+  background-color: #423340;
+}
+
+.title-row {
+  text-transform: uppercase;
+  color: #a2abb2;
+}
+
+/* columns */
+
+.col {
+  overflow: hidden;
+  z-index: 2;
+}
+
+.col.count {
+  width: 40px;
+  padding-inline: 5px;
+  text-align: center;
+  overflow: visible;
+}
+
+.asks .col.count {
+  width: 40px;
+  padding-inline: 5px;
+  text-align: center;
+  overflow: visible;
+}
+
+.col.amount {
+  min-width: 75px;
+  padding-inline: 5px;
+}
+
+.col.total {
+  min-width: 65px;
+  padding-inline: 5px;
+}
+
+.col.price {
+  min-width: 80px;
+}
+
+.asks .col.price {
+  padding-left: 10px;
+  padding-right: 5px;
+  text-align: left;
+}
+
+.bids .col.price {
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+/* charts and bars */
+
+.bar {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  background-color: #1a444b;
+
+  transition: width 0.3s ease-out;
+  max-width: 100%;
+}
+
+.asks .bar {
+  right: unset;
+  left: 0;
+  background-color: #423340;
+}
+
+.bids .bar.blink {
+  background-color: #155753;
+}
+
+.asks .bar.blink {
+  background-color: #633641;
+}
